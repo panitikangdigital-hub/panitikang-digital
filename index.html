@@ -238,19 +238,12 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-
-}<!-- VIDEO MODAL -->
-<div class="modal" id="videoModal">
-  <div class="modal-content" style="max-width:800px;">
-    <span class="close" onclick="closeVideo()">&times;</span>
-    <iframe id="videoFrame" width="100%" height="400"
-      frameborder="0" allowfullscreen>
-    </iframe>
-  </div>
-  
-</div>
+}
 </script>
 
+
+</div>
+</section>
 
 <!-- VIDEO SECTION -->
 <section>
@@ -261,6 +254,8 @@ window.onclick = function(event) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
+  max-width: 900px;
+  margin: auto;
 }
 
 /* VIDEO CARD */
@@ -282,9 +277,10 @@ window.onclick = function(event) {
   width: 100%;
   height: 180px;
   object-fit: cover;
+  display: block;
 }
 
-/* PLAY ICON */
+/* PLAY BUTTON */
 .play-btn {
   position: absolute;
   top: 50%;
@@ -295,6 +291,7 @@ window.onclick = function(event) {
   background: rgba(0,0,0,0.5);
   border-radius: 50%;
   padding: 10px 20px;
+  pointer-events: none; /* IMPORTANT FIX */
 }
 
 /* TITLE */
@@ -304,6 +301,39 @@ window.onclick = function(event) {
   font-weight: bold;
   background: white;
 }
+
+/* VIDEO MODAL */
+#videoModal {
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#videoModal .modal-content {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+}
+
+#videoModal iframe {
+  width: 100%;
+  height: 400px;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 22px;
+}
 </style>
 
 <div class="video-grid">
@@ -312,31 +342,59 @@ window.onclick = function(event) {
 <div class="video-card" onclick="openVideo('https://www.youtube.com/embed/WJ-PXLI5_r8')">
   <img src="https://img.youtube.com/vi/WJ-PXLI5_r8/hqdefault.jpg">
   <div class="play-btn">▶</div>
-  <div class="video-title">Grade 7</div>
+  <div class="video-title">Bidyo 1</div>
 </div>
 
 <!-- VIDEO 2 -->
 <div class="video-card" onclick="openVideo('https://www.youtube.com/embed/OtSYYpoGCr8')">
   <img src="https://img.youtube.com/vi/OtSYYpoGCr8/hqdefault.jpg">
   <div class="play-btn">▶</div>
-  <div class="video-title">Grade 8</div>
+  <div class="video-title">Bidyo 2</div>
 </div>
 
 <!-- VIDEO 3 -->
 <div class="video-card" onclick="openVideo('https://www.youtube.com/embed/ptVLSwtTzUY')">
   <img src="https://img.youtube.com/vi/ptVLSwtTzUY/hqdefault.jpg">
   <div class="play-btn">▶</div>
-  <div class="video-title">Grade 9</div>
+  <div class="video-title">Bidyo 3</div>
 </div>
 
 <!-- VIDEO 4 -->
 <div class="video-card" onclick="openVideo('https://www.youtube.com/embed/AHvSvtxnzGg')">
   <img src="https://img.youtube.com/vi/AHvSvtxnzGg/hqdefault.jpg">
   <div class="play-btn">▶</div>
-  <div class="video-title">Grade 10</div>
+  <div class="video-title">Bidyo 4</div>
 </div>
 
 </div>
+
+<!-- VIDEO MODAL -->
+<div id="videoModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeVideo()">&times;</span>
+    <iframe id="videoFrame" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+function openVideo(videoURL) {
+  document.getElementById("videoFrame").src = videoURL;
+  document.getElementById("videoModal").style.display = "flex";
+}
+
+function closeVideo() {
+  document.getElementById("videoModal").style.display = "none";
+  document.getElementById("videoFrame").src = "";
+}
+
+window.addEventListener("click", function(e) {
+  let modal = document.getElementById("videoModal");
+  if (e.target === modal) {
+    closeVideo();
+  }
+});
+</script>
+
 </section>
 
 <!-- DEPED SECTION -->
