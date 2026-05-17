@@ -238,6 +238,17 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+
+}<!-- VIDEO MODAL -->
+<div class="modal" id="videoModal">
+  <div class="modal-content" style="max-width:800px;">
+    <span class="close" onclick="closeVideo()">&times;</span>
+    <iframe id="videoFrame" width="100%" height="400"
+      frameborder="0" allowfullscreen>
+    </iframe>
+  </div>
+  
+</div>
 }
 </script>
 
@@ -245,126 +256,191 @@ window.onclick = function(event) {
 </div>
 </section>
 
-<!-- VIDEO SECTION -->
-<section>
-<h2>🎥 Mga Bidyo</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panitikang Digital</title>
 
 <style>
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  max-width: 900px;
-  margin: auto;
+body{
+    font-family: Arial, sans-serif;
+    background:#0f172a;
+    margin:0;
+    padding:40px;
+    color:white;
 }
 
-/* VIDEO CARD */
-.video-card {
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  transition: 0.3s;
+h1{
+    text-align:center;
+    margin-bottom:40px;
 }
 
-.video-card:hover {
-  transform: scale(1.05);
+.folder-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
-/* THUMBNAIL */
-.video-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  display: block;
+.folder-card{
+    background:#1e293b;
+    border-radius:20px;
+    padding:25px;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* PLAY BUTTON */
-.play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 50px;
-  color: white;
-  background: rgba(0,0,0,0.5);
-  border-radius: 50%;
-  padding: 10px 20px;
-  pointer-events: none; /* IMPORTANT FIX */
+.folder-card:hover{
+    transform:translateY(-5px);
+    background:#334155;
 }
 
-/* TITLE */
-.video-title {
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
-  background: white;
+.folder-icon{
+    font-size:60px;
+    text-align:center;
 }
 
-/* VIDEO MODAL */
-#videoModal {
-  display: none;
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+.folder-title{
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:10px;
 }
 
-#videoModal .modal-content {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 800px;
+.video-list{
+    display:none;
+    margin-top:20px;
 }
 
-#videoModal iframe {
-  width: 100%;
-  height: 400px;
+.video-item{
+    background:#0f172a;
+    padding:12px;
+    border-radius:12px;
+    margin-bottom:10px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.close {
-  float: right;
-  cursor: pointer;
-  font-size: 22px;
+.video-item:hover{
+    background:#475569;
+}
+
+/* MODAL */
+#videoModal{
+    display:none;
+    position:fixed;
+    z-index:999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+}
+
+.modal-content{
+    position:relative;
+    width:80%;
+    max-width:900px;
+    margin:60px auto;
+}
+
+#videoFrame{
+    width:100%;
+    height:500px;
+    border-radius:15px;
+}
+
+.close{
+    position:absolute;
+    right:-10px;
+    top:-40px;
+    font-size:40px;
+    cursor:pointer;
+    color:white;
+}
+
+@media(max-width:768px){
+    #videoFrame{
+        height:250px;
+    }
 }
 </style>
+</head>
+<body>
 
-<div class="video-grid">
+<h1>Panitikang Digital</h1>
 
-<!-- VIDEO 1 -->
-<div class="video-card" onclick="openVideo('https://www.youtube.com/embed/WJ-PXLI5_r8')">
-  <img src="https://img.youtube.com/vi/WJ-PXLI5_r8/hqdefault.jpg">
-  <div class="play-btn">▶</div>
-  <div class="video-title">Bidyo 1</div>
-</div>
+<div class="folder-container">
 
-<!-- VIDEO 2 -->
-<div class="video-card" onclick="openVideo('https://www.youtube.com/embed/OtSYYpoGCr8')">
-  <img src="https://img.youtube.com/vi/OtSYYpoGCr8/hqdefault.jpg">
-  <div class="play-btn">▶</div>
-  <div class="video-title">Bidyo 2</div>
-</div>
+    <!-- Grade 7 -->
+    <div class="folder-card" onclick="toggleVideos('grade7')">
+        <div class="folder-icon">📁</div>
+        <div class="folder-title">Grade 7</div>
 
-<!-- VIDEO 3 -->
-<div class="video-card" onclick="openVideo('https://www.youtube.com/embed/ptVLSwtTzUY')">
-  <img src="https://img.youtube.com/vi/ptVLSwtTzUY/hqdefault.jpg">
-  <div class="play-btn">▶</div>
-  <div class="video-title">Bidyo 3</div>
-</div>
+        <div class="video-list" id="grade7">
+            <div class="video-item" onclick="openVideo(event,'https://www.youtube.com/embed/WJ-PXLI5_r8')">
+                ▶ Bidyo 1
+            </div>
+        </div>
+    </div>
 
-<!-- VIDEO 4 -->
-<div class="video-card" onclick="openVideo('https://www.youtube.com/embed/AHvSvtxnzGg')">
-  <img src="https://img.youtube.com/vi/AHvSvtxnzGg/hqdefault.jpg">
-  <div class="play-btn">▶</div>
-  <div class="video-title">Bidyo 4</div>
-</div>
+    <!-- Grade 8 -->
+    <div class="folder-card" onclick="toggleVideos('grade8')">
+        <div class="folder-icon">📁</div>
+        <div class="folder-title">Grade 8</div>
+
+        <div class="video-list" id="grade8">
+            <div class="video-item" onclick="openVideo(event,'https://www.youtube.com/embed/OtSYYpoGCr8')">
+                ▶ Bidyo 1
+            </div>
+        </div>
+    </div>
+
+    <!-- Grade 9 -->
+    <div class="folder-card" onclick="toggleVideos('grade9')">
+        <div class="folder-icon">📁</div>
+        <div class="folder-title">Grade 9</div>
+
+        <div class="video-list" id="grade9">
+
+            <div class="video-item" onclick="openVideo(event,'https://www.youtube.com/embed/ptVLSwtTzUY')">
+                ▶ Bidyo 1
+            </div>
+
+            <div class="video-item" onclick="openVideo(event,'https://www.youtube.com/embed/Rre4ikHmywY')">
+                ▶ Bidyo 2
+            </div>
+
+            <div class="video-item" onclick="openVideo(event,'https://www.youtube.com/embed/oOloCA7C9WE')">
+                ▶ Bidyo 3
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Grade 10 -->
+    <div class="folder-card" onclick="toggleVideos('grade10')">
+        <div class="folder-icon">📁</div>
+        <div class="folder-title">Grade 10</div>
+
+        <div class="video-list" id="grade10">
+
+            <div class="video-item" onclick="openVideo(event,'https://www.youtube.com/embed/AHvSvtxnzGg')">
+                ▶ Bidyo 1
+            </div>
+
+            <div class="video-item" onclick="openVideo(event,'https://www.youtube.com/embed/dzRrNhqYrxs')">
+                ▶ Bidyo 2
+            </div>
+
+            <div class="video-item" onclick="openVideo(event,'https://www.youtube.com/embed/8Pd9KiiHtio')">
+                ▶ Bidyo 3
+            </div>
+
+        </div>
+    </div>
 
 </div>
 
@@ -375,6 +451,33 @@ window.onclick = function(event) {
     <iframe id="videoFrame" frameborder="0" allowfullscreen></iframe>
   </div>
 </div>
+
+<script>
+function toggleVideos(id){
+    let videoList=document.getElementById(id);
+
+    if(videoList.style.display === 'block'){
+        videoList.style.display='none';
+    }else{
+        videoList.style.display='block';
+    }
+}
+
+function openVideo(event,videoUrl){
+    event.stopPropagation();
+
+    document.getElementById('videoModal').style.display='block';
+    document.getElementById('videoFrame').src=videoUrl;
+}
+
+function closeVideo(){
+    document.getElementById('videoModal').style.display='none';
+    document.getElementById('videoFrame').src='';
+}
+</script>
+
+</body>
+</html>
 
 <script>
 function openVideo(videoURL) {
@@ -434,4 +537,3 @@ AOS.init();
 </script>
 
 </body>
-</html>
