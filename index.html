@@ -2,286 +2,169 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Panitikang Digital</title>
 
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #f4f6f9;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f4f6f9;
+    color:#222;
 }
 
 /* HERO */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+.hero{
+    background:
+    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
     url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
-    background-size: cover;
-    color: white;
-    text-align: center;
-    padding: 120px 20px;
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+    padding:120px 20px;
 }
 
-.hero p {
-    max-width: 800px;
-    margin: auto;
+.hero h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
 }
 
 /* SECTION */
-section {
-    padding: 60px 20px;
-    max-width: 1100px;
-    margin: auto;
+section{
+    padding:60px 20px;
+    max-width:1200px;
+    margin:auto;
 }
 
-h2 {
-    text-align: center;
+h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:35px;
 }
 
 /* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
 }
 
 /* CARD */
-.card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    transition: 0.3s;
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:.3s;
+    cursor:pointer;
 }
 
-.card:hover {
-    transform: translateY(-8px) scale(1.02);
+.card:hover{
+    transform:translateY(-8px);
 }
 
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
 }
 
-.card-content {
-    padding: 15px;
-    font-size: 14px;
+.card-content{
+    padding:20px;
 }
 
-/* COLORS */
-.blue { border-top: 6px solid #3498db; }
-.yellow { border-top: 6px solid #f1c40f; }
-.purple { border-top: 6px solid #8e44ad; }
-.red { border-top: 6px solid #e74c3c; }
-
-/* QR */
-.qr img {
-    width: 150px;
-    display: block;
-    margin: auto;
+.card-content h3{
+    margin-bottom:10px;
 }
+
+.blue{border-top:6px solid #3498db;}
+.yellow{border-top:6px solid #f1c40f;}
+.purple{border-top:6px solid #8e44ad;}
+.red{border-top:6px solid #e74c3c;}
 
 /* BUTTON */
-.btn {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    padding: 8px;
-    background: #3498db;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    background:#3498db;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
 }
+
 /* MODAL */
-.modal {
-    display: none;
-    position: fixed;
-    top:0;
+.modal{
+    display:none;
+    position:fixed;
+    z-index:999;
     left:0;
+    top:0;
     width:100%;
     height:100%;
-    background: rgba(0,0,0,0.7);
-    justify-content: center;
-    align-items: center;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
 }
 
-.modal-content {
-    background: white;
-    padding: 25px;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 10px;
+.modal-content{
+    background:white;
+    padding:25px;
+    width:90%;
+    max-width:500px;
+    border-radius:15px;
+    position:relative;
 }
 
-.close {
-    float: right;
-    cursor: pointer;
-    font-size: 22px;
-}
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<div class="hero">
-<h1>PANITIKANG DIGITAL</h1>
-<p>
-Ang Panitikang Digital ay isang makabagong paraan ng pag-aaral at pagpapalaganap ng Panitikan 
-sa pamamagitan ng paggamit ng teknolohiya at digital platforms. Sa kasalukuyang panahon, 
-hindi na lamang limitado sa mga aklat at tradisyunal na pamamaraan ang pagkatuto, kundi 
-lumalawak ito sa paggamit ng sosyal midya, nilalamang bidyo, at iba pang mga mapagkukunang onlayn.
-
-Layunin ng website na ito na ipakita kung paano nagiging mas epektibo, makabuluhan, at 
-interaktibo ang pag-aaral ng Panitikang Pilipino sa tulong ng teknolohiya. Inilalahad din 
-dito ang mga benepisyo, hamon, at papel ng mga guro, mag-aaral, at komunidad sa paggamit 
-ng digital platforms bilang daluyan ng kaalaman.
-
-Sa pamamagitan ng wastong paggamit ng teknolohiya, ang Panitikan ay nagiging mas buhay, 
-mas nauunawaan, at mas napapahalagahan ng bagong henerasyon.
-</p>
-</div>
-
-<!-- CARDS -->
-<section>
-<h2>📚 Mga Kaalaman</h2>
-
-<div class="grid">
-
-<div class="card blue" data-aos="fade-up"
-onclick="openModal('Panitikan sa Digital na Panahon', `Mas nagiging kawili-wili ang Panitikan sa pamamagitan ng digital platforms.
-
-Mas malinaw ang pag-unawa
-Mas engaging ang pagkatuto
-Mas naaabot ang kabataan
-
-Ngunit may hamon:
-• Mahinang internet
-• Kakulangan sa gadget
-• Kailangan ng tamang gabay`)">
-<img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353">
-<div class="card-content">
-<h3>📖 Panitikan sa Digital na Panahon</h3>
-</div>
-</div>
-
-<div class="card yellow" data-aos="fade-up"
-onclick="openModal('Para sa Guro', `Ang guro ay may mahalagang papel sa paggamit ng teknolohiya.
-
-TikTok - maikling paliwanag
-YouTube - malalim na talakayan
-Facebook - diskusyon
-
-Tumataas ang interes
-Mas epektibo ang pagtuturo`)">
-<img src="https://images.unsplash.com/photo-1606326608690-4e0281b1e588">
-<div class="card-content">
-<h3>🎓 Para sa Guro</h3>
-</div>
-</div>
-
-<div class="card purple" data-aos="fade-up"
-onclick="openModal('Para sa Estudyante', `Hindi lang pang-libangan ang sosyal midya, meron rin itong edukasyonal na nilalaman.
-
-Pag-aaral ng panitikan
-Pagpapahayag ng sarili
-Pagiging malikhain`)">
-<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
-<div class="card-content">
-<h3>📱 Para sa Estudyante</h3>
-</div>
-</div>
-
-<div class="card red" data-aos="fade-up"
-onclick="openModal('Para sa Komunidad', `Edukasyon + Teknolohiya = Mas maliwanag na kinabukasan
-
-Nakakatulong sa pagkatuto
-Nagpapalawak ng kaalaman
-Nag-uugnay sa komunidad`)">
-<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-<div class="card-content">
-<h3>🌍 Para sa Komunidad</h3>
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- MODAL -->
-<div class="modal" id="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2 id="modalTitle"></h2>
-        <p id="modalText"></p>
-    </div>
-</div>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script>
-AOS.init();
-
-function openModal(title, text) {
-    document.getElementById("modalTitle").innerText = title;
-    document.getElementById("modalText").innerText = text;
-    document.getElementById("modal").style.display = "flex";
+.close{
+    position:absolute;
+    right:15px;
+    top:10px;
+    font-size:30px;
+    cursor:pointer;
 }
 
-function closeModal() {
-    document.getElementById("modal").style.display = "none";
-}
-
-window.onclick = function(event) {
-    let modal = document.getElementById("modal");
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-
-}<!-- VIDEO MODAL -->
-<div class="modal" id="videoModal">
-  <div class="modal-content" style="max-width:800px;">
-    <span class="close" onclick="closeVideo()">&times;</span>
-    <iframe id="videoFrame" width="100%" height="400"
-      frameborder="0" allowfullscreen>
-    </iframe>
-  </div>
-  
-</div>
-</script>
-
-
-</div>
-</section>
-
-
-<style>
-body{
-    font-family: Arial, sans-serif;
+/* FOLDER SECTION */
+.folder-section{
     background:#0f172a;
-    margin:0;
-    padding:40px;
+    padding:60px 20px;
     color:white;
 }
 
-h1{
+.folder-section h1{
     text-align:center;
     margin-bottom:40px;
+    font-size:40px;
 }
 
 .folder-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
+    align-items:start;
 }
 
 .folder-card{
     background:#1e293b;
     border-radius:20px;
     padding:25px;
+    transition:.3s;
     cursor:pointer;
-    transition:0.3s;
     box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
@@ -298,8 +181,8 @@ h1{
 .folder-title{
     text-align:center;
     font-size:24px;
-    font-weight:bold;
     margin-top:10px;
+    font-weight:bold;
 }
 
 .video-list{
@@ -312,15 +195,14 @@ h1{
     padding:12px;
     border-radius:12px;
     margin-bottom:10px;
-    cursor:pointer;
-    transition:0.3s;
+    transition:.3s;
 }
 
 .video-item:hover{
     background:#475569;
 }
 
-/* MODAL */
+/* VIDEO MODAL */
 #videoModal{
     display:none;
     position:fixed;
@@ -330,203 +212,353 @@ h1{
     width:100%;
     height:100%;
     background:rgba(0,0,0,0.8);
-}
-
-.modal-content{
-    position:relative;
-    width:80%;
-    max-width:900px;
-    margin:60px auto;
+    justify-content:center;
+    align-items:center;
 }
 
 #videoFrame{
-    width:100%;
+    width:90%;
+    max-width:900px;
     height:500px;
+    border:none;
     border-radius:15px;
 }
 
-.close{
-    position:absolute;
-    right:-10px;
-    top:-40px;
-    font-size:40px;
-    cursor:pointer;
-    color:white;
+@media(max-width:768px){
+
+.hero h1{
+    font-size:35px;
 }
 
-@media(max-width:768px){
-    #videoFrame{
-        height:250px;
-    }
+#videoFrame{
+    height:250px;
 }
+
+}
+
 </style>
 </head>
+
 <body>
 
-<h1>Panitikang Digital</h1>
+<!-- HERO -->
+<div class="hero">
 
-<div class="folder-container">
+<h1>PANITIKANG DIGITAL</h1>
 
-    <!-- Grade 7 -->
-    <div class="folder-card" onclick="toggleVideos('grade7')">
-        <div class="folder-icon">📁</div>
-        <div class="folder-title">Grade 7</div>
+<p>
+Ang Panitikang Digital ay isang makabagong paraan ng pag-aaral at
+pagpapalaganap ng Panitikan sa pamamagitan ng paggamit ng teknolohiya
+at digital platforms.
 
-        <div class="video-list" id="grade7">
-            <div class="video-item" onclick="openVideo(event,'https://www.youtube.com/watch?v=WJ-PXLI5_r8')">
-                ▶ Bidyo 1
-            </div>
-
-            <div class="video-item" onclick="openVideo(event,https://www.youtube.com/watch?v=AHvSvtxnzGg&t=5s)">
-                ▶ Bidyo 2
-        </div>
-    </div>
-
-    <!-- Grade 8 -->
-    <div class="folder-card" onclick="toggleVideos('grade8')">
-        <div class="folder-icon">📁</div>
-        <div class="folder-title">Grade 8</div>
-
-        <div class="video-list" id="grade8">
-            <div class="video-item" onclick="openVideo(event,'https://www.youtube.com/embed/OtSYYpoGCr8')">
-                ▶ Bidyo 1
-            </div>
-
-             <div class="video-item" onclick="openVideo(event,'https://www.youtube.com/embed/AHvSvtxnzGg')">
-                ▶ Bidyo 2
-            </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Grade 9 -->
-    <div class="folder-card" onclick="toggleVideos('grade9')">
-        <div class="folder-icon">📁</div>
-        <div class="folder-title">Grade 9</div>
-
-        <div class="video-list" id="grade9">
-
-            <div class="video-item" onclick="openVideo(event,https://www.youtube.com/watch?v=Rre4ikHmywY)">
-                ▶ Bidyo 1
-            </div>
-            <div class="video-item" onclick="openVideo(event,https://www.youtube.com/watch?v=oOloCA7C9WE&t=4s)">
-                ▶ Bidyo 2
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Grade 10 -->
-    <div class="folder-card" onclick="toggleVideos('grade10')">
-        <div class="folder-icon">📁</div>
-        <div class="folder-title">Grade 10</div>
-
-        <div class="video-list" id="grade10">
-
-            <div class="video-item" onclick="openVideo(event,https://www.youtube.com/watch?v=dzRrNhqYrxs')">
-                ▶ Bidyo 2
-            </div>
-
-            <div class="video-item" onclick="openVideo(event,https://www.youtube.com/watch?v=8Pd9KiiHtio&t=4s)">
-                ▶ Bidyo 3
-            </div>
-
-        </div>
-    </div>
+Layunin ng website na ito na ipakita kung paano nagiging mas epektibo,
+makabuluhan, at interaktibo ang pag-aaral ng Panitikang Pilipino sa
+tulong ng teknolohiya.
+</p>
 
 </div>
 
-<!-- VIDEO MODAL -->
-<div id="videoModal">
-  <div class="modal-content">
-    <span class="close" onclick="closeVideo()">&times;</span>
-    <iframe id="videoFrame" frameborder="0" allowfullscreen></iframe>
-  </div>
+<!-- CARDS -->
+<section>
+
+<h2>📚 Mga Kaalaman</h2>
+
+<div class="grid">
+
+<div class="card blue" data-aos="fade-up"
+onclick="openModal('Panitikan sa Digital na Panahon','Mas nagiging kawili-wili ang Panitikan sa pamamagitan ng digital platforms. Mas malinaw ang pag-unawa at mas engaging ang pagkatuto.')">
+
+<img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353">
+
+<div class="card-content">
+<h3>📖 Panitikan sa Digital na Panahon</h3>
 </div>
 
-<script>
-function toggleVideos(id){
-    let videoList=document.getElementById(id);
+</div>
 
-    if(videoList.style.display === 'block'){
-        videoList.style.display='none';
-    }else{
-        videoList.style.display='block';
-    }
-}
+<div class="card yellow" data-aos="fade-up"
+onclick="openModal('Para sa Guro','Mahalaga ang papel ng guro sa paggamit ng teknolohiya tulad ng YouTube, Facebook, at TikTok bilang pantulong sa pagtuturo.')">
 
-function openVideo(event,videoUrl){
-    event.stopPropagation();
+<img src="https://images.unsplash.com/photo-1606326608690-4e0281b1e588">
 
-    document.getElementById('videoModal').style.display='block';
-    document.getElementById('videoFrame').src=videoUrl;
-}
+<div class="card-content">
+<h3>🎓 Para sa Guro</h3>
+</div>
 
-function closeVideo(){
-    document.getElementById('videoModal').style.display='none';
-    document.getElementById('videoFrame').src='';
-}
-</script>
+</div>
 
-</body>
-</html>
+<div class="card purple" data-aos="fade-up"
+onclick="openModal('Para sa Estudyante','Nakakatulong ang digital platforms upang maging malikhain at mas interesado ang mga mag-aaral sa Panitikan.')">
 
-<script>
-function openVideo(videoURL) {
-  document.getElementById("videoFrame").src = videoURL;
-  document.getElementById("videoModal").style.display = "flex";
-}
+<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
 
-function closeVideo() {
-  document.getElementById("videoModal").style.display = "none";
-  document.getElementById("videoFrame").src = "";
-}
+<div class="card-content">
+<h3>📱 Para sa Estudyante</h3>
+</div>
 
-window.addEventListener("click", function(e) {
-  let modal = document.getElementById("videoModal");
-  if (e.target === modal) {
-    closeVideo();
-  }
-});
-</script>
+</div>
+
+<div class="card red" data-aos="fade-up"
+onclick="openModal('Para sa Komunidad','Nagiging tulay ang teknolohiya upang mapalawak ang kaalaman at mapalapit ang komunidad sa edukasyon.')">
+
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+
+<div class="card-content">
+<h3>🌍 Para sa Komunidad</h3>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
-<!-- DEPED SECTION -->
+<!-- MODAL -->
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">&times;</span>
+
+<h2 id="modalTitle"></h2>
+
+<p id="modalText"></p>
+
+</div>
+
+</div>
+
+<!-- FOLDER SECTION -->
+<div class="folder-section">
+
+<h1>🎥 Mga Bidyo sa Filipino</h1>
+
+<div class="folder-container">
+
+<!-- Grade 7 -->
+<div class="folder-card" onclick="toggleVideos('grade7')">
+
+<div class="folder-icon">📁</div>
+<div class="folder-title">Grade 7</div>
+
+<div class="video-list" id="grade7">
+
+<div class="video-item"
+onclick="openVideo(event,'https://www.youtube.com/embed/WJ-PXLI5_r8')">
+▶ Bidyo 1
+</div>
+
+<div class="video-item"
+onclick="openVideo(event,'https://www.youtube.com/embed/AHvSvtxnzGg')">
+▶ Bidyo 2
+</div>
+
+</div>
+</div>
+
+<!-- Grade 8 -->
+<div class="folder-card" onclick="toggleVideos('grade8')">
+
+<div class="folder-icon">📁</div>
+<div class="folder-title">Grade 8</div>
+
+<div class="video-list" id="grade8">
+
+<div class="video-item"
+onclick="openVideo(event,'https://www.youtube.com/embed/OtSYYpoGCr8')">
+▶ Bidyo 1
+</div>
+
+<div class="video-item"
+onclick="openVideo(event,'https://www.youtube.com/embed/AHvSvtxnzGg')">
+▶ Bidyo 2
+</div>
+
+</div>
+</div>
+
+<!-- Grade 9 -->
+<div class="folder-card" onclick="toggleVideos('grade9')">
+
+<div class="folder-icon">📁</div>
+<div class="folder-title">Grade 9</div>
+
+<div class="video-list" id="grade9">
+
+<div class="video-item"
+onclick="openVideo(event,'https://www.youtube.com/embed/Rre4ikHmywY')">
+▶ Bidyo 1
+</div>
+
+<div class="video-item"
+onclick="openVideo(event,'https://www.youtube.com/embed/oOloCA7C9WE')">
+▶ Bidyo 2
+</div>
+
+</div>
+</div>
+
+<!-- Grade 10 -->
+<div class="folder-card" onclick="toggleVideos('grade10')">
+
+<div class="folder-icon">📁</div>
+<div class="folder-title">Grade 10</div>
+
+<div class="video-list" id="grade10">
+
+<div class="video-item"
+onclick="openVideo(event,'https://www.youtube.com/embed/dzRrNhqYrxs')">
+▶ Bidyo 1
+</div>
+
+<div class="video-item"
+onclick="openVideo(event,'https://www.youtube.com/embed/8Pd9KiiHtio')">
+▶ Bidyo 2
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- VIDEO MODAL -->
+<div id="videoModal" class="modal">
+
+<span class="close" onclick="closeVideo()">&times;</span>
+
+<iframe id="videoFrame" allowfullscreen></iframe>
+
+</div>
+
+<!-- DEPED -->
 <section>
+
 <h2>📖 Mga Mapagkakatiwalaang Sanggunian</h2>
 
 <div class="grid">
 
-<div class="card" data-aos="fade-right">
+<div class="card">
+
 <div class="card-content">
+
 <h3>🏫 Department of Education (DepEd)</h3>
+
 <p>
-Ang DepEd ay opisyal na ahensya ng pamahalaan na nagbibigay ng kurikulum, 
-learning materials, at mga gabay sa edukasyon sa Pilipinas. Ito ay isang 
-mapagkakatiwalaang sanggunian para sa pag-aaral ng Panitikang Pilipino.
+Opisyal na sanggunian para sa kurikulum at learning materials sa Pilipinas.
 </p>
-<a class="btn" href="https://www.deped.gov.ph" target="_blank">Bisitahin ang DepEd</a>
+
+<a class="btn"
+href="https://www.deped.gov.ph"
+target="_blank">
+Bisitahin ang DepEd
+</a>
+
 </div>
 </div>
 
-<div class="card" data-aos="fade-left">
+<div class="card">
+
 <div class="card-content">
+
 <h3>📚 DepEd Commons</h3>
+
 <p>
-Naglalaman ng libreng learning resources at modules para sa mga guro at estudyante.
+Libreng learning resources at modules para sa mga guro at estudyante.
 </p>
-<a class="btn" href="https://commons.deped.gov.ph" target="_blank">Bisitahin</a>
+
+<a class="btn"
+href="https://commons.deped.gov.ph"
+target="_blank">
+Bisitahin
+</a>
+
 </div>
 </div>
 
 </div>
+
 </section>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
 <script>
+
 AOS.init();
+
+/* INFO MODAL */
+function openModal(title,text){
+
+document.getElementById("modalTitle").innerText=title;
+document.getElementById("modalText").innerText=text;
+
+document.getElementById("modal").style.display="flex";
+
+}
+
+function closeModal(){
+
+document.getElementById("modal").style.display="none";
+
+}
+
+/* FOLDER */
+function toggleVideos(id){
+
+let videoList=document.getElementById(id);
+
+if(videoList.style.display==="block"){
+
+videoList.style.display="none";
+
+}else{
+
+videoList.style.display="block";
+
+}
+
+}
+
+/* VIDEO */
+function openVideo(event,videoUrl){
+
+event.stopPropagation();
+
+document.getElementById("videoModal").style.display="flex";
+
+document.getElementById("videoFrame").src=videoUrl;
+
+}
+
+function closeVideo(){
+
+document.getElementById("videoModal").style.display="none";
+
+document.getElementById("videoFrame").src="";
+
+}
+
+/* CLOSE MODAL OUTSIDE */
+window.onclick=function(event){
+
+let modal=document.getElementById("modal");
+let videoModal=document.getElementById("videoModal");
+
+if(event.target===modal){
+
+modal.style.display="none";
+
+}
+
+if(event.target===videoModal){
+
+closeVideo();
+
+}
+
+}
+
 </script>
 
 </body>
+</html>
